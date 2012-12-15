@@ -2,23 +2,25 @@
 //  Races.m
 //  RPSystem
 //
-//  Created by av on 14.12.12.
+//  Created by Michael on 15.12.12.
 //  Copyright (c) 2012 Mykhaylo. All rights reserved.
 //
 
 #import "Races.h"
+#import "Character.h"
 
 
 @implementation Races
 
-@dynamic name;
-@dynamic descript;
-@dynamic strMod;
-@dynamic dexMod;
-@dynamic conMod;
-@dynamic intMod;
-@dynamic wizMod;
 @dynamic chaMod;
+@dynamic conMod;
+@dynamic descript;
+@dynamic dexMod;
+@dynamic intMod;
+@dynamic name;
 @dynamic serial;
+@dynamic strMod;
+@dynamic wizMod;
+@dynamic characters;
 
 @end
