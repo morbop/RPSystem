@@ -20,4 +20,12 @@
     
 }
 
++ (Classes *)getCharacterClassByType:(kAvailableClasses)type {
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"serial = %d", type];
+    Classes *clas = [Classes MR_findFirstWithPredicate:predicate];
+    
+    return clas;
+}
+
 @end

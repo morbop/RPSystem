@@ -8,6 +8,27 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol DataTypesEnumeration <NSObject>
+typedef enum  {
+    
+    raceHuman = 1,
+    raceDwarf = 2,
+    raceElf = 3
+    
+} kAvailableRaces;
 
-@end
+typedef enum {
+    
+    classFighter = 1,
+    classRanger = 2
+    
+} kAvailableClasses;
+
+typedef enum {
+    
+    Healthy,
+    LightWounds,
+    Wounded,
+    HeavyWounded,
+    AlmostDead,
+    Dead
+} kHealthCondition;

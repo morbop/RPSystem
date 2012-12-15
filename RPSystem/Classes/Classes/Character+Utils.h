@@ -7,7 +7,14 @@
 //
 
 #import "Character.h"
+#import "DataTypesEnumeration.h"
 
 @interface Character (Utils)
+
++ (Character *)createCharacterWithRace:(kAvailableRaces)race
+                              andClass:(kAvailableClasses)clas;
+
+- (kHealthCondition)changeCurrentHPFor:(int)points;
+- (kHealthCondition)currentHealthCondition;
 
 @end

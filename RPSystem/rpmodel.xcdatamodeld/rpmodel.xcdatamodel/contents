@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1810" systemVersion="11E53" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="11G56" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Character" representedClassName="Character" syncable="YES">
+        <attribute name="cha" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="con" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="curHP" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="dex" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="inte" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="level" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="maxHP" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serial" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="str" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="wiz" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="clas" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Classes" inverseName="characters" inverseEntity="Classes" syncable="YES"/>
+        <relationship name="combatData" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CombatData" inverseName="character" inverseEntity="CombatData" syncable="YES"/>
+        <relationship name="race" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Races" inverseName="characters" inverseEntity="Races" syncable="YES"/>
+    </entity>
     <entity name="Classes" representedClassName="Classes" syncable="YES">
         <attribute name="clasName" optional="YES" attributeType="String" syncable="YES">
             <userInfo>
@@ -13,6 +29,16 @@
         </attribute>
         <attribute name="hitDice" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="serial" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="characters" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Character" inverseName="clas" inverseEntity="Character" syncable="YES"/>
+    </entity>
+    <entity name="CombatData" representedClassName="CombatData" syncable="YES">
+        <attribute name="aC" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="baseAttacks" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="chanceOfCritical" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="criticalMuplitplayer" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="damRoll" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="hitRoll" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="character" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Character" inverseName="combatData" inverseEntity="Character" syncable="YES"/>
     </entity>
     <entity name="Fighter" representedClassName="Fighter" syncable="YES">
         <attribute name="baseAttackBonus" optional="YES" attributeType="String" syncable="YES"/>
@@ -32,10 +58,13 @@
         <attribute name="serial" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="strMod" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="wizMod" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="characters" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Character" inverseName="race" inverseEntity="Character" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Classes" positionX="160" positionY="192" width="128" height="105"/>
-        <element name="Races" positionX="160" positionY="192" width="128" height="180"/>
+        <element name="Classes" positionX="160" positionY="192" width="128" height="120"/>
         <element name="Fighter" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="Races" positionX="160" positionY="192" width="128" height="195"/>
+        <element name="Character" positionX="160" positionY="192" width="128" height="255"/>
+        <element name="CombatData" positionX="160" positionY="192" width="128" height="150"/>
     </elements>
 </model>

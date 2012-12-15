@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "RPDataManager.h"
+#import "Character+Utils.h"
+#import "DataTypesEnumeration.h"
 
 @implementation AppDelegate
 
@@ -16,6 +18,11 @@
     
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"rpDatabase.sqlite"];
     [[RPDataManager sharedInstance] initDBIfNeeded];
+    
+    Character *ch = [Character createCharacterWithRace:raceDwarf andClass:classFighter];
+    
+    
+    [ch changeCurrentHPFor:-3];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.

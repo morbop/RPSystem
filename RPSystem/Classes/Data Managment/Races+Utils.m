@@ -18,4 +18,12 @@
     [object MR_importValuesForKeysWithObject:dictionary];
 }
 
++ (Races *)getCharacterRaceByType:(kAvailableRaces)type {
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"serial = %d", type];
+    Races *race = [Races MR_findFirstWithPredicate:predicate];
+    
+    return race;
+}
+
 @end

@@ -7,9 +7,11 @@
 //
 
 #import "Races.h"
+#import "DataTypesEnumeration.h"
 
 @interface Races (Utils)
 
 + (void)createEntityFromDictionary:(NSDictionary *)dictionary;
++ (Races *)getCharacterRaceByType:(kAvailableRaces)type;
 
 @end
