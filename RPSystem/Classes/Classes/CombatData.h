@@ -19,6 +19,9 @@
 @property (nonatomic, retain) NSNumber * hitRoll;
 @property (nonatomic, retain) NSNumber * chanceOfCritical;
 @property (nonatomic, retain) NSNumber * criticalMuplitplayer;
+@property (nonatomic, retain) NSNumber * conSave;
+@property (nonatomic, retain) NSNumber * wilSave;
+@property (nonatomic, retain) NSNumber * reflexSave;
 @property (nonatomic, retain) Character *character;
 
 @end

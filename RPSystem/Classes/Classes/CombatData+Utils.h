@@ -10,4 +10,8 @@
 
 @interface CombatData (Utils)
 
++ (CombatData *)combatDataForCharacter;
+
+- (NSArray *)arrayOfAttackValues;
+
 @end

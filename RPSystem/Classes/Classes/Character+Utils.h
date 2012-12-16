@@ -17,4 +17,7 @@
 - (kHealthCondition)changeCurrentHPFor:(int)points;
 - (kHealthCondition)currentHealthCondition;
 
+- (void)meleeAttackCharacter:(Character *)enemyCharacter;
+- (void)attackedInMeleeByHitRoll:(int)hitRoll andDamRoll:(int)damRoll;
+
 @end

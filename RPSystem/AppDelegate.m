@@ -19,11 +19,12 @@
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"rpDatabase.sqlite"];
     [[RPDataManager sharedInstance] initDBIfNeeded];
     
-    Character *ch = [Character createCharacterWithRace:raceDwarf andClass:classFighter];
+    Character *good = [Character createCharacterWithRace:raceDwarf andClass:classFighter];
+    Character *bad = [Character createCharacterWithRace:raceDwarf andClass:classFighter];
     
-    
-    [ch changeCurrentHPFor:-3];
-    
+    [bad meleeAttackCharacter:good];
+    [good meleeAttackCharacter:bad];
+        
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];

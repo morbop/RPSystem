@@ -10,7 +10,6 @@
 		A2A5AEBF167B3F29002CA5C6 /* RPDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A5AEBE167B3F29002CA5C6 /* RPDataManager.m */; };
 		A2A5AEC2167B42B0002CA5C6 /* rpmodel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A2A5AEC0167B42B0002CA5C6 /* rpmodel.xcdatamodeld */; };
 		A2A5AEC5167B4489002CA5C6 /* Classes.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A5AEC4167B4489002CA5C6 /* Classes.m */; };
-		A2A5AEC8167B4499002CA5C6 /* Fighter.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A5AEC7167B4499002CA5C6 /* Fighter.m */; };
 		A2A5AECB167B44A8002CA5C6 /* Races.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A5AECA167B44A8002CA5C6 /* Races.m */; };
 		A2A5AEE3167B73B1002CA5C6 /* Classes+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A5AEE2167B73B1002CA5C6 /* Classes+Utils.m */; };
 		A2A5AEE6167B73E0002CA5C6 /* Races+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A5AEE5167B73E0002CA5C6 /* Races+Utils.m */; };
@@ -57,6 +56,8 @@
 		F8D38639167CA66100E9F1FE /* Character+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D38638167CA66100E9F1FE /* Character+Utils.m */; };
 		F8D38643167CC09A00E9F1FE /* CombatData.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D38642167CC09A00E9F1FE /* CombatData.m */; };
 		F8D38649167CC0EA00E9F1FE /* CombatData+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D38648167CC0EA00E9F1FE /* CombatData+Utils.m */; };
+		F8D3864F167E054300E9F1FE /* ClassData.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D3864E167E054300E9F1FE /* ClassData.m */; };
+		F8D38655167E05FD00E9F1FE /* Fighter.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D38654167E05FD00E9F1FE /* Fighter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,8 +66,6 @@
 		A2A5AEC1167B42B0002CA5C6 /* rpmodel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = rpmodel.xcdatamodel; sourceTree = "<group>"; };
 		A2A5AEC3167B4489002CA5C6 /* Classes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Classes.h; path = "RPSystem/Classes/Data Managment/Classes.h"; sourceTree = "<group>"; };
 		A2A5AEC4167B4489002CA5C6 /* Classes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Classes.m; path = "RPSystem/Classes/Data Managment/Classes.m"; sourceTree = "<group>"; };
-		A2A5AEC6167B4499002CA5C6 /* Fighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Fighter.h; path = "RPSystem/Classes/Data Managment/Fighter.h"; sourceTree = "<group>"; };
-		A2A5AEC7167B4499002CA5C6 /* Fighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Fighter.m; path = "RPSystem/Classes/Data Managment/Fighter.m"; sourceTree = "<group>"; };
 		A2A5AEC9167B44A8002CA5C6 /* Races.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Races.h; path = "RPSystem/Classes/Data Managment/Races.h"; sourceTree = "<group>"; };
 		A2A5AECA167B44A8002CA5C6 /* Races.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Races.m; path = "RPSystem/Classes/Data Managment/Races.m"; sourceTree = "<group>"; };
 		A2A5AEE1167B73B1002CA5C6 /* Classes+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Classes+Utils.h"; path = "RPSystem/Classes/Data Managment/Classes+Utils.h"; sourceTree = "<group>"; };
@@ -154,6 +153,10 @@
 		F8D38642167CC09A00E9F1FE /* CombatData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CombatData.m; path = RPSystem/Classes/Classes/CombatData.m; sourceTree = "<group>"; };
 		F8D38647167CC0EA00E9F1FE /* CombatData+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CombatData+Utils.h"; path = "RPSystem/Classes/Classes/CombatData+Utils.h"; sourceTree = "<group>"; };
 		F8D38648167CC0EA00E9F1FE /* CombatData+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CombatData+Utils.m"; path = "RPSystem/Classes/Classes/CombatData+Utils.m"; sourceTree = "<group>"; };
+		F8D3864D167E054300E9F1FE /* ClassData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClassData.h; path = RPSystem/Classes/Classes/ClassData.h; sourceTree = "<group>"; };
+		F8D3864E167E054300E9F1FE /* ClassData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClassData.m; path = RPSystem/Classes/Classes/ClassData.m; sourceTree = "<group>"; };
+		F8D38653167E05FD00E9F1FE /* Fighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Fighter.h; path = RPSystem/Classes/Classes/Fighter.h; sourceTree = "<group>"; };
+		F8D38654167E05FD00E9F1FE /* Fighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Fighter.m; path = RPSystem/Classes/Classes/Fighter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,7 +178,7 @@
 		A2A5AEBB167B3EEE002CA5C6 /* Data Managment */ = {
 			isa = PBXGroup;
 			children = (
-				A2A5AECC167B44B9002CA5C6 /* Core Data */,
+				F8D3862C167CA42600E9F1FE /* Classes */,
 				A2A5AEBD167B3F29002CA5C6 /* RPDataManager.h */,
 				A2A5AEBE167B3F29002CA5C6 /* RPDataManager.m */,
 			);
@@ -185,6 +188,16 @@
 		A2A5AECC167B44B9002CA5C6 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				F8D3864D167E054300E9F1FE /* ClassData.h */,
+				F8D3864E167E054300E9F1FE /* ClassData.m */,
+				F8D3862E167CA61200E9F1FE /* Character.h */,
+				F8D3862F167CA61200E9F1FE /* Character.m */,
+				F8D38637167CA66100E9F1FE /* Character+Utils.h */,
+				F8D38638167CA66100E9F1FE /* Character+Utils.m */,
+				F8D38641167CC09A00E9F1FE /* CombatData.h */,
+				F8D38642167CC09A00E9F1FE /* CombatData.m */,
+				F8D38647167CC0EA00E9F1FE /* CombatData+Utils.h */,
+				F8D38648167CC0EA00E9F1FE /* CombatData+Utils.m */,
 				A2A5AEC3167B4489002CA5C6 /* Classes.h */,
 				A2A5AEC4167B4489002CA5C6 /* Classes.m */,
 				A2A5AEE1167B73B1002CA5C6 /* Classes+Utils.h */,
@@ -193,8 +206,8 @@
 				A2A5AECA167B44A8002CA5C6 /* Races.m */,
 				A2A5AEE4167B73E0002CA5C6 /* Races+Utils.h */,
 				A2A5AEE5167B73E0002CA5C6 /* Races+Utils.m */,
-				A2A5AEC6167B4499002CA5C6 /* Fighter.h */,
-				A2A5AEC7167B4499002CA5C6 /* Fighter.m */,
+				F8D38653167E05FD00E9F1FE /* Fighter.h */,
+				F8D38654167E05FD00E9F1FE /* Fighter.m */,
 				A2A5AEE7167B73FA002CA5C6 /* Fighter+Utils.h */,
 				A2A5AEE8167B73FA002CA5C6 /* Fighter+Utils.m */,
 			);
@@ -204,7 +217,6 @@
 		F880CACB1675099800D78ED8 = {
 			isa = PBXGroup;
 			children = (
-				F8D3862C167CA42600E9F1FE /* Classes */,
 				A2A5AEBB167B3EEE002CA5C6 /* Data Managment */,
 				F880CB4D16750A4200D78ED8 /* libs */,
 				F880CAE01675099800D78ED8 /* RPSystem */,
@@ -372,14 +384,7 @@
 		F8D3862C167CA42600E9F1FE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F8D3862E167CA61200E9F1FE /* Character.h */,
-				F8D3862F167CA61200E9F1FE /* Character.m */,
-				F8D38637167CA66100E9F1FE /* Character+Utils.h */,
-				F8D38638167CA66100E9F1FE /* Character+Utils.m */,
-				F8D38641167CC09A00E9F1FE /* CombatData.h */,
-				F8D38642167CC09A00E9F1FE /* CombatData.m */,
-				F8D38647167CC0EA00E9F1FE /* CombatData+Utils.h */,
-				F8D38648167CC0EA00E9F1FE /* CombatData+Utils.m */,
+				A2A5AECC167B44B9002CA5C6 /* Core Data */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -481,7 +486,6 @@
 				A2A5AEBF167B3F29002CA5C6 /* RPDataManager.m in Sources */,
 				A2A5AEC2167B42B0002CA5C6 /* rpmodel.xcdatamodeld in Sources */,
 				A2A5AEC5167B4489002CA5C6 /* Classes.m in Sources */,
-				A2A5AEC8167B4499002CA5C6 /* Fighter.m in Sources */,
 				A2A5AECB167B44A8002CA5C6 /* Races.m in Sources */,
 				A2A5AEE3167B73B1002CA5C6 /* Classes+Utils.m in Sources */,
 				A2A5AEE6167B73E0002CA5C6 /* Races+Utils.m in Sources */,
@@ -490,6 +494,8 @@
 				F8D38639167CA66100E9F1FE /* Character+Utils.m in Sources */,
 				F8D38643167CC09A00E9F1FE /* CombatData.m in Sources */,
 				F8D38649167CC0EA00E9F1FE /* CombatData+Utils.m in Sources */,
+				F8D3864F167E054300E9F1FE /* ClassData.m in Sources */,
+				F8D38655167E05FD00E9F1FE /* Fighter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

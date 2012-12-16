@@ -18,6 +18,9 @@
 @dynamic hitRoll;
 @dynamic chanceOfCritical;
 @dynamic criticalMuplitplayer;
+@dynamic conSave;
+@dynamic wilSave;
+@dynamic reflexSave;
 @dynamic character;
 
 @end

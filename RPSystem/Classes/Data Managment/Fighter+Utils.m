@@ -18,4 +18,12 @@
     [object MR_importValuesForKeysWithObject:dictionary];
 }
 
++ (Fighter *)fighterInfoForLevel:(NSNumber *)level {
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"level = %d", [level integerValue]];
+    Fighter *fighter = [Fighter MR_findFirstWithPredicate:predicate];
+    
+    return fighter;
+}
+
 @end

@@ -16,6 +16,14 @@
         <relationship name="combatData" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CombatData" inverseName="character" inverseEntity="CombatData" syncable="YES"/>
         <relationship name="race" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Races" inverseName="characters" inverseEntity="Races" syncable="YES"/>
     </entity>
+    <entity name="ClassData" representedClassName="ClassData" isAbstract="YES" syncable="YES">
+        <attribute name="baseAttackBonus" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fortSave" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="level" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="refSave" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="serial" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="wilSave" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
     <entity name="Classes" representedClassName="Classes" syncable="YES">
         <attribute name="clasName" optional="YES" attributeType="String" syncable="YES">
             <userInfo>
@@ -35,19 +43,15 @@
         <attribute name="aC" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="baseAttacks" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="chanceOfCritical" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="conSave" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="criticalMuplitplayer" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="damRoll" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="hitRoll" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="reflexSave" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="wilSave" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="character" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Character" inverseName="combatData" inverseEntity="Character" syncable="YES"/>
     </entity>
-    <entity name="Fighter" representedClassName="Fighter" syncable="YES">
-        <attribute name="baseAttackBonus" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="fortSave" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <attribute name="level" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <attribute name="refSave" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <attribute name="serial" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <attribute name="wilSave" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-    </entity>
+    <entity name="Fighter" representedClassName="Fighter" parentEntity="ClassData" syncable="YES"/>
     <entity name="Races" representedClassName="Races" syncable="YES">
         <attribute name="chaMod" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="conMod" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -62,9 +66,10 @@
     </entity>
     <elements>
         <element name="Classes" positionX="160" positionY="192" width="128" height="120"/>
-        <element name="Fighter" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="Fighter" positionX="160" positionY="192" width="128" height="45"/>
         <element name="Races" positionX="160" positionY="192" width="128" height="195"/>
         <element name="Character" positionX="160" positionY="192" width="128" height="255"/>
-        <element name="CombatData" positionX="160" positionY="192" width="128" height="150"/>
+        <element name="CombatData" positionX="160" positionY="192" width="128" height="195"/>
+        <element name="ClassData" positionX="160" positionY="192" width="128" height="135"/>
     </elements>
 </model>

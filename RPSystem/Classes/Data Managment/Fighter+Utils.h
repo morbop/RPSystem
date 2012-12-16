@@ -11,5 +11,6 @@
 @interface Fighter (Utils)
 
 + (void)createEntityFromDictionary:(NSDictionary *)dictionary;
++ (Fighter *)fighterInfoForLevel:(NSNumber *)level;
 
 @end

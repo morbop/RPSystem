@@ -9,10 +9,11 @@
 #import "Character+Utils.h"
 #import "Races+Utils.h"
 #import "Classes+Utils.h"
+#import "CombatData+Utils.h"
+#import "Fighter+Utils.h"
+#import "ClassData.h"
 
 @implementation Character (Utils)
-
-
 
 #pragma mark - Initialize
 
@@ -23,10 +24,17 @@
     
     character.race = [Races getCharacterRaceByType:race];
     character.clas = [Classes getCharacterClassByType:clas];
-    [character rollBasicAttributes];
-    [character applyRacialTraits];
+    character.combatData = [CombatData combatDataForCharacter];
     
+    [character rollBasicAttributes];
+    [character updateCombatDataForCurrentAttributes];
     character.level = [NSNumber numberWithInt:1];
+    
+    [character applyRacialTraits];
+    [character applyClassChanges];
+    
+    
+    
     character.maxHP = [NSNumber numberWithInt: [character calculateMaximumHitPoints]];
     character.curHP = [character.maxHP copy];
     
@@ -47,7 +55,7 @@
     
     int hitDice = [self.clas.hitDice intValue];
     int lvl = [self.level intValue];
-    int conBonus = ([self.con intValue] - 10) % 2;
+    int conBonus = [self getBonusForAttributeValue:self.con];
     
     int maxHp = 0;
     
@@ -93,6 +101,85 @@
     return Dead;
 }
 
+#pragma mark - Character Combat 
+
+- (void)attackedInMeleeByHitRoll:(int)hitRoll andDamRoll:(int)damRoll {
+    
+    if (hitRoll >= [self.combatData.aC intValue]) {
+        
+        [self changeCurrentHPFor:-damRoll];
+    }
+}
+
+- (void)meleeAttackCharacter:(Character *)enemyCharacter {
+    
+    NSArray *arrayOfAttacks = [self.combatData arrayOfAttackValues];
+    
+    for (int i = 0; i < [arrayOfAttacks count]; i++) {
+        
+        int finalHitRoll = [self hitRoll] + [[arrayOfAttacks objectAtIndex:i] intValue];
+        int finalDamRoll = [self damageRoll] + [[arrayOfAttacks objectAtIndex:i] intValue];
+        
+        [enemyCharacter attackedInMeleeByHitRoll:finalHitRoll andDamRoll:finalDamRoll];
+    }
+}
+
+- (int)hitRoll {
+    
+    int hitRoll = arc4random()%20 + 1;
+    hitRoll += [self.combatData.hitRoll integerValue];
+    
+    return hitRoll;
+}
+
+- (int)damageRoll {
+
+    return arc4random()%6 + 1;
+}
+
+#pragma mark - Combat Data methods
+
+- (void)updateCombatDataWith:(ClassData *)characterClass {
+    
+    self.combatData.wilSave = characterClass.wilSave;
+    self.combatData.reflexSave = characterClass.refSave;
+    self.combatData.conSave = characterClass.fortSave;
+    self.combatData.baseAttacks = characterClass.baseAttackBonus;
+}
+
+- (void)updateCombatDataForCurrentAttributes {
+    
+    self.combatData.aC = [NSNumber numberWithInt:[self.combatData.aC integerValue] +
+                          [self getBonusForAttributeValue:self.dex]];
+    self.combatData.damRoll = [NSNumber numberWithInt:[self getBonusForAttributeValue:self.str]];
+    self.combatData.hitRoll = [NSNumber numberWithInt:[self getBonusForAttributeValue:self.str]];
+}
+
+
+#pragma mark - Class Methods
+
+- (void)applyClassChanges {
+    
+    ClassData *characterClass;
+    switch ([self.clas.serial intValue]) {
+        case classFighter:
+            characterClass = (ClassData *)[Fighter fighterInfoForLevel:self.level];
+            break;
+        case classRanger:
+            
+            break;
+        default:
+            characterClass = nil;
+            break;
+    }
+    
+    if (characterClass) {
+        
+        [self updateCombatDataWith:characterClass];
+    }
+}
+
+
 #pragma mark - Race methods
 
 - (void)applyRacialTraits {
@@ -107,5 +194,9 @@
 
 #pragma mark - Misc
 
+- (int)getBonusForAttributeValue:(NSNumber *)attributeValue {
+    
+    return ([attributeValue intValue] - 10) % 2;
+}
 
 @end

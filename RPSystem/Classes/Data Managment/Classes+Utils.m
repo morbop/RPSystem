@@ -17,7 +17,6 @@
     Classes *object = [Classes MR_createInContext:localContext];
 
     [object MR_importValuesForKeysWithObject:dictionary];
-    
 }
 
 + (Classes *)getCharacterClassByType:(kAvailableClasses)type {
