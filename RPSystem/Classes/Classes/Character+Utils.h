@@ -14,6 +14,15 @@
 + (Character *)createCharacterWithRace:(kAvailableRaces)race
                               andClass:(kAvailableClasses)clas;
 
++ (Character *)createCharacterWithRace:(kAvailableRaces)race
+                              andClass:(kAvailableClasses)clas
+                                  name:(NSString *)name;
+
++ (Character *)createCharacterWithRace:(kAvailableRaces)race
+                              andClass:(kAvailableClasses)clas
+                                  name:(NSString *)name
+                               ofLevel:(int)level;
+
 - (kHealthCondition)changeCurrentHPFor:(int)points;
 - (kHealthCondition)currentHealthCondition;
 

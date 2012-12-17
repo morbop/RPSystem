@@ -41,6 +41,27 @@
     return character;
 }
 
++ (Character *)createCharacterWithRace:(kAvailableRaces)race andClass:(kAvailableClasses)clas name:(NSString *)name {
+    
+    Character *character = [Character createCharacterWithRace:race andClass:clas];
+    
+    character.name = name;
+    
+    return character;
+}
+
++ (Character *)createCharacterWithRace:(kAvailableRaces)race andClass:(kAvailableClasses)clas name:(NSString *)name ofLevel:(int)level {
+    
+    Character *character = [Character createCharacterWithRace:race andClass:clas name:name];
+    
+    for (int j = 0; j < level; j++) {
+        
+        [character levelUp];
+    }
+    
+    return character;
+}
+
 - (void)rollBasicAttributes {
     
     self.str = [NSNumber numberWithInt:((arc4random()%6) + (arc4random()%6) + (arc4random()%6) + 3)];
@@ -67,6 +88,17 @@
     return maxHp;
 }
 
+- (void)levelUp {
+    
+    self.level = [NSNumber numberWithInt:[self.level intValue] + 1];
+    int hpChange = arc4random() % [self.clas.hitDice intValue] + 1;
+    
+    [self changeCurrentHPFor:hpChange];
+    [self changeMaximumHPFor:hpChange];
+    
+    [self updateCombatDataWith:[self getCurrentClassTable]];
+}
+
 #pragma mark - Health Control
 
 - (kHealthCondition)changeCurrentHPFor:(int)points {
@@ -78,7 +110,7 @@
 
 - (void)changeMaximumHPFor:(int)points {
     
-    self.curHP = [NSNumber numberWithInt:[self.curHP intValue] + points];
+    self.maxHP = [NSNumber numberWithInt:[self.maxHP intValue] + points];
 }
 
 - (kHealthCondition)currentHealthCondition {
@@ -105,13 +137,22 @@
 
 - (void)attackedInMeleeByHitRoll:(int)hitRoll andDamRoll:(int)damRoll {
     
+    NSLog(@"He rolled %d and...", hitRoll);
+    
     if (hitRoll >= [self.combatData.aC intValue]) {
         
         [self changeCurrentHPFor:-damRoll];
+        NSLog(@"hit opponent for %d !", damRoll);
+    }
+    else {
+        
+        NSLog(@"missed!");
     }
 }
 
 - (void)meleeAttackCharacter:(Character *)enemyCharacter {
+    
+    NSLog(@"%@ attack %@ in melee!", self.name, enemyCharacter.name);
     
     NSArray *arrayOfAttacks = [self.combatData arrayOfAttackValues];
     
@@ -160,6 +201,16 @@
 
 - (void)applyClassChanges {
     
+    ClassData *characterClass = [self getCurrentClassTable];
+    
+    if (characterClass) {
+        
+        [self updateCombatDataWith:characterClass];
+    }
+}
+
+- (ClassData *)getCurrentClassTable {
+    
     ClassData *characterClass;
     switch ([self.clas.serial intValue]) {
         case classFighter:
@@ -173,12 +224,8 @@
             break;
     }
     
-    if (characterClass) {
-        
-        [self updateCombatDataWith:characterClass];
-    }
+    return characterClass;
 }
-
 
 #pragma mark - Race methods
 

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "RPDataManager.h"
+#import "CoreData+MagicalRecord.h"
 #import "Character+Utils.h"
 #import "DataTypesEnumeration.h"
 
@@ -19,11 +20,41 @@
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"rpDatabase.sqlite"];
     [[RPDataManager sharedInstance] initDBIfNeeded];
     
-    Character *good = [Character createCharacterWithRace:raceDwarf andClass:classFighter];
-    Character *bad = [Character createCharacterWithRace:raceDwarf andClass:classFighter];
+    Character *good = [Character createCharacterWithRace:raceDwarf andClass:classFighter name:@"Korgan" ofLevel:3];
+    Character *bad = [Character createCharacterWithRace:raceHuman andClass:classFighter name:@"Jordan" ofLevel:3];
     
-    [bad meleeAttackCharacter:good];
-    [good meleeAttackCharacter:bad];
+    int i = 1;
+    
+    while (YES) {
+        
+        NSLog(@"########################################");
+        NSLog(@"         ");
+        NSLog([NSString stringWithFormat:@"Round %d", i]);
+        NSLog(@"         ");
+        
+        sleep(1);
+        [good meleeAttackCharacter:bad];
+        if ([bad.curHP intValue] < 0) {
+            
+            NSLog(@"%@ is killed!", bad.name);
+            break;
+        }
+            
+        sleep(4);
+        NSLog(@"         ");
+        [bad meleeAttackCharacter:good];
+        if ([good.curHP intValue] <= 0) {
+            
+            NSLog(@"%@ is killed!", good.name);
+            break;
+        }
+            
+        sleep(1);
+        i++;
+    }
+    
+    
+    
         
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
