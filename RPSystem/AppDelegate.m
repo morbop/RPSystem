@@ -20,8 +20,8 @@
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"rpDatabase.sqlite"];
     [[RPDataManager sharedInstance] initDBIfNeeded];
     
-    Character *good = [Character createCharacterWithRace:raceDwarf andClass:classFighter name:@"Korgan" ofLevel:3];
-    Character *bad = [Character createCharacterWithRace:raceHuman andClass:classFighter name:@"Jordan" ofLevel:3];
+    Character *good = [Character createCharacterWithRace:raceDwarf andClass:classFighter name:@"Korgan" ofLevel:15];
+    Character *bad = [Character createCharacterWithRace:raceHuman andClass:classFighter name:@"Jordan" ofLevel:15];
     
     int i = 1;
     
