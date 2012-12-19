@@ -2,7 +2,7 @@
 //  Character.m
 //  RPSystem
 //
-//  Created by Michael on 15.12.12.
+//  Created by av on 19.12.12.
 //  Copyright (c) 2012 Mykhaylo. All rights reserved.
 //
 
@@ -14,19 +14,20 @@
 
 @implementation Character
 
-@dynamic serial;
-@dynamic name;
-@dynamic maxHP;
-@dynamic curHP;
-@dynamic str;
-@dynamic dex;
-@dynamic con;
 @dynamic cha;
+@dynamic con;
+@dynamic curHP;
+@dynamic dex;
 @dynamic inte;
-@dynamic wiz;
 @dynamic level;
-@dynamic race;
+@dynamic maxHP;
+@dynamic name;
+@dynamic serial;
+@dynamic str;
+@dynamic wiz;
 @dynamic clas;
 @dynamic combatData;
+@dynamic race;
+@dynamic equipment;
 
 @end

@@ -9,6 +9,8 @@
 #import "Character.h"
 #import "DataTypesEnumeration.h"
 
+@class Item;
+
 @interface Character (Utils)
 
 + (Character *)createCharacterWithRace:(kAvailableRaces)race
@@ -28,5 +30,7 @@
 
 - (void)meleeAttackCharacter:(Character *)enemyCharacter;
 - (void)attackedInMeleeByHitRoll:(int)hitRoll andDamRoll:(int)damRoll;
+
+- (void)equipItem:(Item *)item;
 
 @end

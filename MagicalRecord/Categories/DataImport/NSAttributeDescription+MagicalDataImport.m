@@ -48,6 +48,20 @@
                 value = [NSNumber numberWithInt:[value integerValue]];
             }
         }
+        if (attributeType == NSDecimalAttributeType)
+        {
+            if (![value isKindOfClass:[NSDecimalNumber class]])
+            {
+                value = [NSDecimalNumber decimalNumberWithDecimal:[value decimalValue]];
+            }
+        }
+        if (attributeType == NSBooleanAttributeType)
+        {
+            if (![value isKindOfClass:[NSNumber class]])
+            {
+                value = [NSNumber numberWithBool:[value boolValue]];
+            }
+        }
     }
     
     return value == [NSNull null] ? nil : value;   

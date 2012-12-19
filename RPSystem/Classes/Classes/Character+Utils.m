@@ -12,6 +12,8 @@
 #import "CombatData+Utils.h"
 #import "Fighter+Utils.h"
 #import "ClassData.h"
+#import "Equipment+Utils.h"
+#import "ItemWeapon+Utils.h"
 
 @implementation Character (Utils)
 
@@ -25,6 +27,8 @@
     character.race = [Races getCharacterRaceByType:race];
     character.clas = [Classes getCharacterClassByType:clas];
     character.combatData = [CombatData combatDataForCharacter];
+    character.equipment = [Equipment createEquipment];
+    [character.equipment equipItem:[ItemWeapon getWeaponBySerial:UnarmedStrike]];
     
     [character rollBasicAttributes];
     [character updateCombatDataForCurrentAttributes];
@@ -133,6 +137,13 @@
     return Dead;
 }
 
+#pragma mark - Equipment
+
+- (void)equipItem:(id)item {
+    
+    [self.equipment equipItem:item];
+}
+
 #pragma mark - Character Combat 
 
 - (void)attackedInMeleeByHitRoll:(int)hitRoll andDamRoll:(int)damRoll {
@@ -142,7 +153,7 @@
     if (hitRoll >= [self.combatData.aC intValue]) {
         
         [self changeCurrentHPFor:-damRoll];
-        NSLog(@"hit opponent for %d !", damRoll);
+        NSLog(@"hit opponentfor %d !",damRoll);
     }
     else {
         
@@ -152,7 +163,7 @@
 
 - (void)meleeAttackCharacter:(Character *)enemyCharacter {
     
-    NSLog(@"%@ attack %@ in melee!", self.name, enemyCharacter.name);
+    NSLog(@"%@ attack %@ using %@ in melee!", self.name, enemyCharacter.name, self.equipment.rightHand.name);
     
     NSArray *arrayOfAttacks = [self.combatData arrayOfAttackValues];
     
@@ -174,8 +185,15 @@
 }
 
 - (int)damageRoll {
+    
+    int diceRoll = 0;
+    
+    for (int i = 0; i < [self.equipment.rightHand.rollQnty intValue]; i++)
+    {
+        diceRoll += [self rollDice:[self.equipment.rightHand.damageRoll intValue]];
+    }
 
-    return arc4random()%6 + 1;
+    return diceRoll;
 }
 
 #pragma mark - Combat Data methods
@@ -244,6 +262,11 @@
 - (int)getBonusForAttributeValue:(NSNumber *)attributeValue {
     
     return ([attributeValue intValue] - 10) % 2;
+}
+
+- (int)rollDice:(int)dice {
+    
+    return arc4random() % dice + 1;
 }
 
 @end

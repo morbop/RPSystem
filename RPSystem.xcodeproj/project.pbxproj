@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A2A0E50E1681C3820021645C /* ItemWeapon.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A0E50D1681C3820021645C /* ItemWeapon.m */; };
+		A2A0E5131681C3A80021645C /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A0E5121681C3A80021645C /* Item.m */; };
+		A2A0E5161681C4100021645C /* ItemWeapon+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A0E5151681C4100021645C /* ItemWeapon+Utils.m */; };
+		A2A0E52B1681E5970021645C /* Equipment.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A0E52A1681E5970021645C /* Equipment.m */; };
+		A2A0E52E1681E5C40021645C /* Equipment+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A0E52D1681E5C40021645C /* Equipment+Utils.m */; };
+		A2A0E531168217720021645C /* ItemArmour.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A0E530168217720021645C /* ItemArmour.m */; };
+		A2A0E534168217A20021645C /* ItemArmour+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A0E533168217A10021645C /* ItemArmour+Utils.m */; };
 		A2A5AEBF167B3F29002CA5C6 /* RPDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A5AEBE167B3F29002CA5C6 /* RPDataManager.m */; };
 		A2A5AEC2167B42B0002CA5C6 /* rpmodel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A2A5AEC0167B42B0002CA5C6 /* rpmodel.xcdatamodeld */; };
 		A2A5AEC5167B4489002CA5C6 /* Classes.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A5AEC4167B4489002CA5C6 /* Classes.m */; };
@@ -61,6 +68,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A2A0E50C1681C3820021645C /* ItemWeapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemWeapon.h; path = "RPSystem/Classes/Data Managment/ItemWeapon.h"; sourceTree = "<group>"; };
+		A2A0E50D1681C3820021645C /* ItemWeapon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemWeapon.m; path = "RPSystem/Classes/Data Managment/ItemWeapon.m"; sourceTree = "<group>"; };
+		A2A0E5111681C3A80021645C /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Item.h; path = "RPSystem/Classes/Data Managment/Item.h"; sourceTree = "<group>"; };
+		A2A0E5121681C3A80021645C /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Item.m; path = "RPSystem/Classes/Data Managment/Item.m"; sourceTree = "<group>"; };
+		A2A0E5141681C4100021645C /* ItemWeapon+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ItemWeapon+Utils.h"; path = "RPSystem/Classes/Data Managment/ItemWeapon+Utils.h"; sourceTree = "<group>"; };
+		A2A0E5151681C4100021645C /* ItemWeapon+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ItemWeapon+Utils.m"; path = "RPSystem/Classes/Data Managment/ItemWeapon+Utils.m"; sourceTree = "<group>"; };
+		A2A0E5291681E5960021645C /* Equipment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Equipment.h; path = "RPSystem/Classes/Data Managment/Equipment.h"; sourceTree = "<group>"; };
+		A2A0E52A1681E5970021645C /* Equipment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Equipment.m; path = "RPSystem/Classes/Data Managment/Equipment.m"; sourceTree = "<group>"; };
+		A2A0E52C1681E5C40021645C /* Equipment+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Equipment+Utils.h"; path = "RPSystem/Classes/Data Managment/Equipment+Utils.h"; sourceTree = "<group>"; };
+		A2A0E52D1681E5C40021645C /* Equipment+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Equipment+Utils.m"; path = "RPSystem/Classes/Data Managment/Equipment+Utils.m"; sourceTree = "<group>"; };
+		A2A0E52F168217720021645C /* ItemArmour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemArmour.h; path = "RPSystem/Classes/Data Managment/ItemArmour.h"; sourceTree = "<group>"; };
+		A2A0E530168217720021645C /* ItemArmour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemArmour.m; path = "RPSystem/Classes/Data Managment/ItemArmour.m"; sourceTree = "<group>"; };
+		A2A0E532168217A00021645C /* ItemArmour+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ItemArmour+Utils.h"; path = "RPSystem/Classes/Data Managment/ItemArmour+Utils.h"; sourceTree = "<group>"; };
+		A2A0E533168217A10021645C /* ItemArmour+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ItemArmour+Utils.m"; path = "RPSystem/Classes/Data Managment/ItemArmour+Utils.m"; sourceTree = "<group>"; };
 		A2A5AEBD167B3F29002CA5C6 /* RPDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RPDataManager.h; path = "RPSystem/Classes/Data Managment/RPDataManager.h"; sourceTree = "<group>"; };
 		A2A5AEBE167B3F29002CA5C6 /* RPDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RPDataManager.m; path = "RPSystem/Classes/Data Managment/RPDataManager.m"; sourceTree = "<group>"; };
 		A2A5AEC1167B42B0002CA5C6 /* rpmodel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = rpmodel.xcdatamodel; sourceTree = "<group>"; };
@@ -175,6 +196,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A2A0E5101681C38D0021645C /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				A2A0E5291681E5960021645C /* Equipment.h */,
+				A2A0E52A1681E5970021645C /* Equipment.m */,
+				A2A0E52C1681E5C40021645C /* Equipment+Utils.h */,
+				A2A0E52D1681E5C40021645C /* Equipment+Utils.m */,
+				A2A0E5111681C3A80021645C /* Item.h */,
+				A2A0E5121681C3A80021645C /* Item.m */,
+				A2A0E50C1681C3820021645C /* ItemWeapon.h */,
+				A2A0E50D1681C3820021645C /* ItemWeapon.m */,
+				A2A0E5141681C4100021645C /* ItemWeapon+Utils.h */,
+				A2A0E5151681C4100021645C /* ItemWeapon+Utils.m */,
+				A2A0E52F168217720021645C /* ItemArmour.h */,
+				A2A0E530168217720021645C /* ItemArmour.m */,
+				A2A0E532168217A00021645C /* ItemArmour+Utils.h */,
+				A2A0E533168217A10021645C /* ItemArmour+Utils.m */,
+			);
+			name = Items;
+			sourceTree = "<group>";
+		};
 		A2A5AEBB167B3EEE002CA5C6 /* Data Managment */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +230,7 @@
 		A2A5AECC167B44B9002CA5C6 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				A2A0E5101681C38D0021645C /* Items */,
 				F8D3864D167E054300E9F1FE /* ClassData.h */,
 				F8D3864E167E054300E9F1FE /* ClassData.m */,
 				F8D3862E167CA61200E9F1FE /* Character.h */,
@@ -496,6 +539,13 @@
 				F8D38649167CC0EA00E9F1FE /* CombatData+Utils.m in Sources */,
 				F8D3864F167E054300E9F1FE /* ClassData.m in Sources */,
 				F8D38655167E05FD00E9F1FE /* Fighter.m in Sources */,
+				A2A0E50E1681C3820021645C /* ItemWeapon.m in Sources */,
+				A2A0E5131681C3A80021645C /* Item.m in Sources */,
+				A2A0E5161681C4100021645C /* ItemWeapon+Utils.m in Sources */,
+				A2A0E52B1681E5970021645C /* Equipment.m in Sources */,
+				A2A0E52E1681E5C40021645C /* Equipment+Utils.m in Sources */,
+				A2A0E531168217720021645C /* ItemArmour.m in Sources */,
+				A2A0E534168217A20021645C /* ItemArmour+Utils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

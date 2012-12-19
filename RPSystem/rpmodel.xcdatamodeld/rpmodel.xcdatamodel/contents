@@ -14,6 +14,7 @@
         <attribute name="wiz" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="clas" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Classes" inverseName="characters" inverseEntity="Classes" syncable="YES"/>
         <relationship name="combatData" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CombatData" inverseName="character" inverseEntity="CombatData" syncable="YES"/>
+        <relationship name="equipment" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Equipment" inverseName="character" inverseEntity="Equipment" syncable="YES"/>
         <relationship name="race" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Races" inverseName="characters" inverseEntity="Races" syncable="YES"/>
     </entity>
     <entity name="ClassData" representedClassName="ClassData" isAbstract="YES" syncable="YES">
@@ -51,23 +52,36 @@
         <attribute name="wilSave" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="character" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Character" inverseName="combatData" inverseEntity="Character" syncable="YES"/>
     </entity>
+    <entity name="Equipment" representedClassName="Equipment" syncable="YES">
+        <relationship name="character" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Character" inverseName="equipment" inverseEntity="Character" syncable="YES"/>
+        <relationship name="head" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="ItemArmour" syncable="YES"/>
+        <relationship name="leftHand" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="ItemWeapon" inverseName="eqLeftHand" inverseEntity="ItemWeapon" syncable="YES"/>
+        <relationship name="rightHand" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="ItemWeapon" inverseName="eqRightHand" inverseEntity="ItemWeapon" syncable="YES"/>
+        <relationship name="torso" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="ItemArmour" syncable="YES"/>
+    </entity>
     <entity name="Fighter" representedClassName="Fighter" parentEntity="ClassData" syncable="YES"/>
-    <entity name="Item" isAbstract="YES" syncable="YES">
+    <entity name="Item" representedClassName="Item" isAbstract="YES" syncable="YES">
         <attribute name="descript" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="serial" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="weight" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
     </entity>
-    <entity name="ItemArmour" parentEntity="Item" syncable="YES">
+    <entity name="ItemArmour" representedClassName="ItemArmour" parentEntity="Item" syncable="YES">
         <attribute name="acBonus" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="subType" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="eqHead" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemArmour" inverseName="eqHead" inverseEntity="ItemArmour" syncable="YES"/>
+        <relationship name="eqTorso" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemArmour" inverseName="eqTorso" inverseEntity="ItemArmour" syncable="YES"/>
     </entity>
-    <entity name="ItemWeapon" parentEntity="Item" syncable="YES">
+    <entity name="ItemWeapon" representedClassName="ItemWeapon" parentEntity="Item" syncable="YES">
+        <attribute name="acBonus" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="damageRoll" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="isTwoHanded" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="range" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="rollQnty" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="subType" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="eqLeftHand" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Equipment" inverseName="leftHand" inverseEntity="Equipment" syncable="YES"/>
+        <relationship name="eqRightHand" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Equipment" inverseName="rightHand" inverseEntity="Equipment" syncable="YES"/>
     </entity>
     <entity name="Races" representedClassName="Races" syncable="YES">
         <attribute name="chaMod" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -82,14 +96,15 @@
         <relationship name="characters" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Character" inverseName="race" inverseEntity="Character" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Character" positionX="592" positionY="144" width="128" height="255"/>
+        <element name="Character" positionX="592" positionY="144" width="128" height="270"/>
         <element name="ClassData" positionX="108" positionY="468" width="128" height="135"/>
         <element name="Classes" positionX="351" positionY="117" width="128" height="120"/>
         <element name="CombatData" positionX="844" positionY="315" width="128" height="195"/>
         <element name="Fighter" positionX="315" positionY="459" width="128" height="45"/>
-        <element name="Races" positionX="-56" positionY="189" width="128" height="195"/>
         <element name="Item" positionX="396" positionY="306" width="128" height="120"/>
-        <element name="ItemWeapon" positionX="405" positionY="315" width="128" height="105"/>
-        <element name="ItemArmour" positionX="414" positionY="324" width="128" height="75"/>
+        <element name="ItemArmour" positionX="414" positionY="324" width="128" height="105"/>
+        <element name="ItemWeapon" positionX="405" positionY="315" width="128" height="165"/>
+        <element name="Races" positionX="-56" positionY="189" width="128" height="195"/>
+        <element name="Equipment" positionX="160" positionY="192" width="128" height="120"/>
     </elements>
 </model>
