@@ -6,12 +6,12 @@
 //  Copyright (c) 2012 Mykhaylo. All rights reserved.
 //
 
+#import "DataTypesEnumeration.h"
 #import "Equipment+Utils.h"
 #import "Character+Utils.h"
-#import "Item.h"
 #import "ItemWeapon+Utils.h"
 #import "ItemArmour+Utils.h"
-#import "DataTypesEnumeration.h"
+#import "Item.h"
 
 @implementation Equipment (Utils)
 
@@ -24,6 +24,7 @@
 
 - (void)equipItem:(Item *)item {
     ItemWeapon *weapon = (ItemWeapon *)item;
+    ItemArmour *armor = (ItemArmour *)item;
     switch ([item.type integerValue]) {
         case Weapons:
             
@@ -48,6 +49,15 @@
             break;
         case Armour:
             
+            if ([armor.subType intValue] == typeTorso) {
+                
+                self.torso = armor;
+            }
+            else {
+                
+                self.head = armor;
+            }
+            
             break;
         default:
             break;
@@ -58,10 +68,12 @@
     
     int aC = 0;
     
-    if (self.rightHand)
-        aC += [self.rightHand.acBonus intValue];
+    if (self.leftHand)
+        aC += [self.leftHand.acBonus intValue];
     if (self.torso)
-        //aC += self.torso
+        aC += [self.torso.acBonus intValue];
+    if (self.head)
+        aC += [self.head.acBonus intValue];
     
     return aC;
 }

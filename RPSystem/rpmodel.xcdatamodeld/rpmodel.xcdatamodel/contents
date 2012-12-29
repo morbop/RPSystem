@@ -80,8 +80,8 @@
         <attribute name="range" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="rollQnty" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="subType" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <relationship name="eqLeftHand" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Equipment" inverseName="leftHand" inverseEntity="Equipment" syncable="YES"/>
-        <relationship name="eqRightHand" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Equipment" inverseName="rightHand" inverseEntity="Equipment" syncable="YES"/>
+        <relationship name="eqLeftHand" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Equipment" inverseName="leftHand" inverseEntity="Equipment" syncable="YES"/>
+        <relationship name="eqRightHand" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Equipment" inverseName="rightHand" inverseEntity="Equipment" syncable="YES"/>
     </entity>
     <entity name="Races" representedClassName="Races" syncable="YES">
         <attribute name="chaMod" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -96,15 +96,15 @@
         <relationship name="characters" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Character" inverseName="race" inverseEntity="Character" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Character" positionX="592" positionY="144" width="128" height="270"/>
+        <element name="Character" positionX="610" positionY="-270" width="128" height="270"/>
         <element name="ClassData" positionX="108" positionY="468" width="128" height="135"/>
         <element name="Classes" positionX="351" positionY="117" width="128" height="120"/>
         <element name="CombatData" positionX="844" positionY="315" width="128" height="195"/>
-        <element name="Fighter" positionX="315" positionY="459" width="128" height="45"/>
-        <element name="Item" positionX="396" positionY="306" width="128" height="120"/>
-        <element name="ItemArmour" positionX="414" positionY="324" width="128" height="105"/>
-        <element name="ItemWeapon" positionX="405" positionY="315" width="128" height="165"/>
-        <element name="Races" positionX="-56" positionY="189" width="128" height="195"/>
         <element name="Equipment" positionX="160" positionY="192" width="128" height="120"/>
+        <element name="Fighter" positionX="279" positionY="441" width="128" height="45"/>
+        <element name="Item" positionX="610" positionY="306" width="128" height="120"/>
+        <element name="ItemArmour" positionX="864" positionY="138" width="128" height="105"/>
+        <element name="ItemWeapon" positionX="603" positionY="474" width="128" height="165"/>
+        <element name="Races" positionX="-56" positionY="189" width="128" height="195"/>
     </elements>
 </model>

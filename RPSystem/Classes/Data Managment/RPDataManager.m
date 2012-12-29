@@ -11,6 +11,7 @@
 #import "Races+Utils.h"
 #import "Fighter+Utils.h"
 #import "ItemWeapon+Utils.h"
+#import "ItemArmour+Utils.h"
 
 const NSArray *listOfTablesToLoad;
 const NSArray *classNameStorage;
@@ -67,6 +68,7 @@ static RPDataManager *RpDataManager = nil;
                           @"Races",
                           @"Fighter",
                           @"Weapons",
+                          @"Armor",
                           nil];
     
     for (int i = 0; i < [listOfTablesToLoad count]; i++) {
@@ -75,6 +77,7 @@ static RPDataManager *RpDataManager = nil;
                                        [Races class],
                                        [Fighter class],
                                        [ItemWeapon class],
+                                       [ItemArmour class],
                                        nil];
     }
 }

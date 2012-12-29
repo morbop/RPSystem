@@ -7,7 +7,12 @@
 //
 
 #import "ItemArmour.h"
+#import "DataTypesEnumeration.h"
 
 @interface ItemArmour (Utils)
+
++ (void)createEntityFromDictionary:(NSDictionary *)dictionary;
+
++ (ItemArmour *)getArmourBySerial:(kArmourSerial)serial;
 
 @end

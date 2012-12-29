@@ -12,6 +12,7 @@
 #import "Character+Utils.h"
 #import "DataTypesEnumeration.h"
 #import "ItemWeapon+Utils.h"
+#import "ItemArmour+Utils.h"
 
 @implementation AppDelegate
 
@@ -21,12 +22,14 @@
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"rpDatabase.sqlite"];
     [[RPDataManager sharedInstance] initDBIfNeeded];
     
-    Character *good = [Character createCharacterWithRace:raceDwarf andClass:classFighter name:@"Korgan" ofLevel:4];
+    Character *good = [Character createCharacterWithRace:raceDwarf andClass:classFighter name:@"Korgan" ofLevel:3];
     [good equipItem:[ItemWeapon getWeaponBySerial:ShortSword]];
     [good equipItem:[ItemWeapon getWeaponBySerial:MediumShield]];
+    [good equipItem:[ItemArmour getArmourBySerial:LeatherArmour]];
+    [good equipItem:[ItemArmour getArmourBySerial:LeatherHelm]];
     
-    Character *bad = [Character createCharacterWithRace:raceHuman andClass:classFighter name:@"Jordan" ofLevel:4];
-    [bad equipItem:[ItemWeapon getWeaponBySerial:Mace]];
+    Character *bad = [Character createCharacterWithRace:raceHuman andClass:classFighter name:@"Jordan" ofLevel:5];
+    [bad equipItem:[ItemWeapon getWeaponBySerial:ShortSword]];
     
     int i = 1;
     

@@ -150,14 +150,16 @@
     
     NSLog(@"He rolled %d and...", hitRoll);
     
-    if (hitRoll >= [self.combatData.aC intValue]) {
+    int totalAC = [self.combatData.aC intValue] + [self.equipment getACValue];
+    
+    if (hitRoll >= totalAC) {
         
         [self changeCurrentHPFor:-damRoll];
-        NSLog(@"hit opponentfor %d !",damRoll);
+        NSLog(@"hit (AC:%d) opponentfor %d !", totalAC, damRoll);
     }
     else {
         
-        NSLog(@"missed!");
+        NSLog(@"missed! (AC:%d)", totalAC);
     }
 }
 

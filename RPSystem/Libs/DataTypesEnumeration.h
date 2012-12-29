@@ -34,6 +34,12 @@ typedef enum {
 
 typedef enum {
     
+    LeatherArmour = 1,
+    LeatherHelm = 2
+} kArmourSerial;
+
+typedef enum {
+    
     Healthy,
     LightWounds,
     Wounded,
@@ -59,4 +65,9 @@ typedef enum {
     typeMace = 100400
 } kWeaponTypes;
 
+typedef enum {
+    
+    typeTorso = 200100,
+    typeHelm = 200200
+} kArmourTypes;
 
